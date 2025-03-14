@@ -1,0 +1,132 @@
+.image-test-page {
+  background-color: #f8f8f8;
+  min-height: 100vh;
+  
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+  
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #202020;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  &__description {
+    font-size: 16px;
+    color: #606060;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  
+  &__section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+  
+  &__subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: #202020;
+    margin-bottom: 16px;
+  }
+  
+  &__stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  &__stat {
+    background-color: #f5f5f5;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  
+  &__item {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    
+    &--error {
+      border-color: #ff4c4c;
+      background-color: rgba(255, 76, 76, 0.05);
+    }
+    
+    &--loaded {
+      border-color: #4caf50;
+      background-color: rgba(76, 175, 80, 0.05);
+    }
+  }
+  
+  &__item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  &__item-id {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  &__item-status {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background-color: #e0e0e0;
+    
+    &--error {
+      background-color: #ff4c4c;
+      color: white;
+    }
+    
+    &--success {
+      background-color: #4caf50;
+      color: white;
+    }
+  }
+  
+  &__image-container {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  &__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  &__item-url {
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #606060;
+    word-break: break-all;
+    background-color: #f5f5f5;
+    border-top: 1px solid #e0e0e0;
+  }
+} 
