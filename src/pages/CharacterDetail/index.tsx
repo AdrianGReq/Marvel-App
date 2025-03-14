@@ -52,7 +52,7 @@ const CharacterDetail = () => {
         }
       } else {
         // Si no hay thumbnail o la imagen no está disponible, usamos la imagen de respaldo
-        const fallbackUrl = getFallbackImage(selectedCharacter.name, selectedCharacter.id);
+        const fallbackUrl = getFallbackImage(selectedCharacter.name);
         
         if (imageUrl !== fallbackUrl) {
           setImageUrl(fallbackUrl);
@@ -79,7 +79,7 @@ const CharacterDetail = () => {
   const handleImageError = () => {
     // Si la imagen original falla, usar la imagen de respaldo
     if (!usingFallback && selectedCharacter) {
-      const fallbackUrl = getFallbackImage(selectedCharacter.name, selectedCharacter.id);
+      const fallbackUrl = getFallbackImage(selectedCharacter.name);
       setImageUrl(fallbackUrl);
       setUsingFallback(true);
     }

@@ -1,7 +1,4 @@
-// Imagen predeterminada para fallbacks
-const DEFAULT_IMAGE = "https://www.seekpng.com/png/full/49-497411_marvel-characters-png-marvel-logo.png";
-
-// Mapeo basado en nombres de personajes con URLs reales
+// Mapeo de nombres de personajes a URLs de imágenes personalizadas
 export const CHARACTER_NAME_IMAGE_MAPPING: Record<string, string> = {
   "Aaron Stack": "https://s3.amazonaws.com/comicgeeks/characters/avatars/72789.jpg?t=1732711711",
   "Abomination (Ultimate)": "https://upload.wikimedia.org/wikipedia/en/4/4d/Abomination_%28Emil_Blonsky%29.jpg",
@@ -80,25 +77,27 @@ export const ensureHttps = (url: string): string => {
 };
 
 /**
- * Obtiene la imagen apropiada para un personaje cuando la original no está disponible
- * @param name Nombre del personaje
- * @param id ID del personaje (no utilizado actualmente, mantenido por compatibilidad)
+ * Obtiene una imagen de respaldo para un personaje
+ * @param name Nombre del personaje para el que buscar imagen
+ * @returns URL de la imagen de respaldo
  */
-export const getFallbackImage = (name: string = '', id?: number): string => {
+export const getFallbackImage = (name: string = ''): string => {
+  // Intentar encontrar una imagen personalizada por nombre
   if (name && CHARACTER_NAME_IMAGE_MAPPING[name]) {
     return CHARACTER_NAME_IMAGE_MAPPING[name];
   }
   
-  return DEFAULT_IMAGE;
+  // Imagen genérica por defecto
+  return 'https://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg';
 };
 
 /**
  * Obtiene la descripción traducida para un personaje si está disponible
- * @param name Nombre del personaje (mantenido por compatibilidad)
+ * @param _ Nombre del personaje (no utilizado, mantenido por compatibilidad)
  * @param originalDescription Descripción original proporcionada por la API
  * @param id ID del personaje 
  */
-export const getCharacterDescription = (name: string = '', originalDescription: string = '', id?: number): string => {
+export const getCharacterDescription = (_: string = '', originalDescription: string = '', id?: number): string => {
     // Mapeo de IDs a descripciones traducidas
     const characterDescriptionsById: Record<string, string> = {
       "1011334": "Un héroe con fuerza y velocidad mejoradas, formado por la fusión de dos hermanos.", // 3-D MAN
