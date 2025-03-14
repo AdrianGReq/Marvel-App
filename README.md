@@ -11,7 +11,7 @@ Aplicación web que consume la API de Marvel para mostrar información sobre per
 ## Instalación
 
 ```bash
-git clone [URL_DEL_REPOSITORIO]
+git clone https://github.com/AdrianGReq/Marvel-App.git
 cd marvel-app
 npm install
 ```
@@ -63,8 +63,6 @@ npm test
 
 - Implementación de PWA
 - Caché offline
-- Mejoras de rendimiento
-- Tests End-to-End
 
 ## Tecnologías Utilizadas
 
